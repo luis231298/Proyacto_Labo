@@ -1,3 +1,2 @@
 # Proyacto_Labo
-Proyecto de casa, en laboratorio 
-hola
+Proyecto de casa, en laboratorio
