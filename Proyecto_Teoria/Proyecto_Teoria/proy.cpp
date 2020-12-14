@@ -144,6 +144,7 @@ int main()
 	Model piso("resources/objects/piso/piso.obj");
 	Model carro("resources/objects/lambo/carroceria.obj");
 	Model buzon("resources/objects/Buzon/buzon.obj");
+	Model pasto("resources/objects/pasto/pasto.obj");
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -230,7 +231,7 @@ int main()
 		model = glm::translate(model, glm::vec3(15.0f, -1.5f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
-		piso.Draw(staticShader);
+		pasto.Draw(staticShader);
 
 		model = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::translate(model, glm::vec3(15.0f, -1.5f, movAuto_z));
