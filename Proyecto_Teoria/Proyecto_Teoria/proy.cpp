@@ -124,12 +124,12 @@ int main()
 
 	vector<std::string> faces
 	{
-		"resources/skybox/right.jpg",
-		"resources/skybox/left.jpg",
-		"resources/skybox/top.jpg",
-		"resources/skybox/bottom.jpg",
-		"resources/skybox/front.jpg",
-		"resources/skybox/back.jpg"
+		"resources/skybox/derecha1.png",
+		"resources/skybox/left1.jpg",
+		"resources/skybox/top1.jpg",
+		"resources/skybox/bottom1.jpg",
+		"resources/skybox/front1.jpg",
+		"resources/skybox/derecha2.png"
 	};
 
 	Skybox skybox = Skybox(faces);
