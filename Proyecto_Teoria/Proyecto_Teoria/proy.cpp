@@ -145,6 +145,9 @@ int main()
 	Model carro("resources/objects/lambo/carroceria.obj");
 	Model buzon("resources/objects/Buzon/buzon.obj");
 	Model pasto("resources/objects/pasto/pasto.obj");
+	Model mesa("resources/objects/Mesa/mesa.obj");
+	Model toscana("resources/objects/toscanapiso/ceramico.obj");
+	Model cuarto("resources/objects/cuarto/cuarto.obj");
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -227,18 +230,18 @@ int main()
 		staticShader.setVec3("light.direction", lightDirection);
 		staticShader.setVec3("viewPos", camera.Position);*/
 
-		model = glm::mat4(1.0f);
+		/*model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(15.0f, -1.5f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
-		pasto.Draw(staticShader);
+		toscana.Draw(staticShader);*/
 
-		model = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(15.0f, -1.5f, movAuto_z));
+		model = glm::rotate(glm::mat4(1.0f), glm::radians(270.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(15.0f, 0.0f, movAuto_z));
 		model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
 		//model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
 		staticShader.setMat4("model", model);
-		buzon.Draw(staticShader);
+		cuarto.Draw(staticShader);
 		//carro.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
