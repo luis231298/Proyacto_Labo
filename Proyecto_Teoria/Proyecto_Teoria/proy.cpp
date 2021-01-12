@@ -239,7 +239,7 @@ int main()
 		pasto.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0.0f, -1.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, -1.5f, 50.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
