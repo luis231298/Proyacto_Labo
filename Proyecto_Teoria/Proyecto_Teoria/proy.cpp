@@ -40,7 +40,7 @@ const unsigned int SCR_HEIGHT = 600;
 
 // camera
 Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
-float MovementSpeed = 2.0f;
+float MovementSpeed = 1.0f;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
 bool firstMouse = true;
@@ -145,6 +145,7 @@ int main()
 	Model pasillo("resources/objects/pasillo/pasillo.obj");
 	Model cuartosYak("resources/objects/CuartosYak/CuartosYak.obj");
 	Model cuartosLuis("resources/objects/CuartoLuis/cuarto.obj");
+	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
 	//Model carro("resources/objects/lambo/carroceria.obj");
 	//Model buzon("resources/objects/Buzon/buzon.obj");
 	//Model pasto("resources/objects/pasto/pasto.obj");
@@ -257,6 +258,12 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartosLuis.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-42.3f, -1.5f, 10.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cuartoIrma.Draw(staticShader);
 		//model = glm::rotate(glm::mat4(1.0f), glm::radians(0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		//model = glm::translate(model, glm::vec3(15.0f, 0.0f, movAuto_z));
 		//model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
