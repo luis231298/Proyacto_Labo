@@ -55,7 +55,7 @@ double	deltaTime = 0.0f,
 //glm::vec3 lightDirection = glm::vec3(-0.2f, -1.0f, -0.3f);
 //Lighting
 glm::vec3 lightPosition(0.0f, 4.0f, -10.0f);
-glm::vec3 lightDirection(0.0f, -1.0f, 0.0f);
+glm::vec3 lightDirection(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
 
 // posiciones
 float x = 0.0f;
@@ -89,7 +89,7 @@ int main()
 
 	// glfw window creation
 	// --------------------
-	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Practica 9", NULL, NULL);
+	GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Casa", NULL, NULL);
 	if (window == NULL)
 	{
 		std::cout << "Failed to create GLFW window" << std::endl;
