@@ -253,7 +253,7 @@ int main()
 		cuartosYak.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-250.0f, -1.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(-29.0f, -1.5f, 93.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartosLuis.Draw(staticShader);
