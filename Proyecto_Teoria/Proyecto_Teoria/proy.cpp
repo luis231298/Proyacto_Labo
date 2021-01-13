@@ -328,7 +328,14 @@ void my_input(GLFWwindow *window)
 		lightPosition.x -= 1.0f;
 	if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
 		lightPosition.x += 1.0f;
-	
+	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
+		lightPosition.y += 1.0f;
+	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
+		lightPosition.y -= 1.0f;
+	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
+		lightPosition.z += 1.0f;
+	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
+		lightPosition.z -= 1.0f;
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
