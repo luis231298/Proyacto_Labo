@@ -247,7 +247,7 @@ int main()
 		pasillo.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(250.0f, -1.5f, 0.0f));
+		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 55.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartosYak.Draw(staticShader);
