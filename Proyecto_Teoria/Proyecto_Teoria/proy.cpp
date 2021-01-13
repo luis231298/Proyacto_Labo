@@ -147,6 +147,7 @@ int main()
 	Model cuartosLuis("resources/objects/CuartoLuis/cuarto.obj");
 	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
 	Model mesita("resources/objects/mesita/mesita.obj");
+	Model asador("resources/objects/asador/asador.obj");
 	//Model carro("resources/objects/lambo/carroceria.obj");
 	//Model buzon("resources/objects/Buzon/buzon.obj");
 	//Model pasto("resources/objects/pasto/pasto.obj");
@@ -267,10 +268,16 @@ int main()
 		cuartoIrma.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-25.0, -1.5f, -50.0f));
+		model = glm::translate(model, glm::vec3(-25.0f, -1.5f, -50.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		mesita.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(40.0f, -0.5f, -50.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		asador.Draw(staticShader);
 		//model = glm::rotate(glm::mat4(1.0f), glm::radians(0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		//model = glm::translate(model, glm::vec3(15.0f, 0.0f, movAuto_z));
 		//model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
