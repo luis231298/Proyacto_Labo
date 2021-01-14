@@ -63,6 +63,19 @@ float y = 0.0f;
 bool animacion = false;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 void animate(void)
 {
 	/*std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
