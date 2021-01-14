@@ -60,7 +60,6 @@ glm::vec3 lightDirection(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
 // posiciones
 float x = 0.0f;
 float y = 0.0f;
-float movAuto_z = 0.0f;
 bool animacion = false;
 
 
@@ -154,6 +153,9 @@ int main()
 	Model asador("resources/objects/asador/asador.obj");
 	Model nave("resources/objects/Nave/Nave.obj");
 	Model cama1("resources/objects/cama/cama.obj");
+	Model buro("resources/objects/buro/buro.obj");
+	Model despertador("resources/objects/despertador/despertador.obj");
+	Model estante("resources/objects/estante/estante.obj");
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -293,11 +295,32 @@ int main()
 		asador.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.58f));
+		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.0f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cama1.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, -1.5f, 68.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		buro.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 7.4f, 74.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		despertador.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-23.0f, -1.5f, 72.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		estante.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
