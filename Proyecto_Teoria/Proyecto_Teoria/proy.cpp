@@ -171,7 +171,7 @@ int main()
 	Model sillonG("resources/objects/SillonG/SillonGrande.obj");
 	Model sillonP("resources/objects/SillonP/SillonPequeño.obj");
 	Model tele("resources/objects/TV/Tele.obj");
-
+	Model paredes("resources/objects/Paredes/Paredes.obj");
 
 
 
@@ -481,12 +481,12 @@ int main()
 		staticShader.setMat4("model", model);
 		alacena.Draw(staticShader);
 
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(8.5f, -1.5f, -17.5f));
+		//model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		paredes.Draw(staticShader);
 
 
 
