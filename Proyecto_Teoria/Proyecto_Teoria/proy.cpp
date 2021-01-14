@@ -159,7 +159,68 @@ int main()
 	Model lavadora1("resources/objects/lavadora/lavadora.obj");
 	Model lavadora2("resources/objects/lavadora/lavadora.obj");
 	Model burro("resources/objects/burro/burro.obj");
+	//yak
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/////////
+	//Irma
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////
+	//YO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	//////////////
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -273,6 +334,55 @@ int main()
 		staticShader.setMat4("model", model);
 		burro.Draw(staticShader);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		//-------Aqui termina espacio Irma------------------------
 
 
@@ -289,6 +399,55 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		//------Aqui termina espacio Balam-------------------------------------------------------
 
@@ -351,6 +510,56 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		estante.Draw(staticShader);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		////////////
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
