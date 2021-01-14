@@ -760,7 +760,7 @@ int main()
 		staticShader.setMat4("model", model);
 		paredes.Draw(staticShader);
 		
-
+		
 
 
 
@@ -881,7 +881,7 @@ int main()
 		staticShader.setMat4("model", model);
 		p4.Draw(staticShader);
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(10.0f, -0.5f, -50.0f));
+		model = glm::translate(model, glm::vec3(10.0f, -0.5f, -75.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		planta.Draw(staticShader);
