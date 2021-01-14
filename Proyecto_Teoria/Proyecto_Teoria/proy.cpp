@@ -66,14 +66,14 @@ bool animacion = false;
 
 void animate(void)
 {
-	std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
+	/*std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
 	std::cout << "posicion camara= " << camera.Position.y << " en Y" << std::endl;
-	std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;
+	std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;*/
 	if (animacion)
 	{
-		movAuto_z += 0.03f;
-
-		std::cout << "posicion = " << movAuto_z << " en Z" << std::endl;
+		std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
+		std::cout << "posicion camara= " << camera.Position.y << " en Y" << std::endl;
+		std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;
 	}
 }
 
@@ -332,9 +332,12 @@ void my_input(GLFWwindow *window)
 		camera.ProcessKeyboard(LEFT, deltaTime);
 	if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 		camera.ProcessKeyboard(RIGHT, deltaTime);
-	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
-		animacion = true;
-	
+	if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+		if (animacion)
+			animacion = false;
+		else
+			animacion = true;
+	}
 
 	if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
 		camera.MovementSpeed = MovementSpeed * 2.5f;
