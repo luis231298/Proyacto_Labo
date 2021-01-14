@@ -152,6 +152,16 @@ int main()
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
 	Model nave("resources/objects/Nave/Nave.obj");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	Model cama1("resources/objects/cama/cama.obj");
 	Model buro("resources/objects/buro/buro.obj");
 	Model despertador("resources/objects/despertador/despertador.obj");
