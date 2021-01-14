@@ -790,8 +790,8 @@ void my_input(GLFWwindow *window)
 		camera.MovementSpeed = MovementSpeed;
 
 	//animacion de la Nave
-	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		animacionNave ^= true;
+	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
+		animacionNave ^= true;	
 	
 	
 	
