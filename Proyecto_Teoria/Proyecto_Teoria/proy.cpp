@@ -114,23 +114,21 @@ void animate(void)
 				recorridoNave2 = false;
 			}
 		}
-
+	}
 	//despertador
-		if (aniD) {
-			if (sube) {
-				movD_y += 0.02f;
-				if (movD_y <= 20.0f) {
-					sube = false;
-				}
+	if (aniD) {
+		if (sube) {
+			movD_y += 0.02f;
+			if (movD_y <= 20.0f) {
+				sube = false;
+			}
 			else {
 				movD_y -= 0.02f;
 				if (movD_y <= 1.5f)
 					sube = true;
-				}
 			}
 		}
 	}
-
 
 
 
