@@ -441,45 +441,45 @@ int main()
 		staticShader.setMat4("model", model);
 		cortinas.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(16.0f, -1.5f, 33.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		mesa.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(16.0f, -1.5f, 27.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		asientoMesa.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(16.0f, -1.5f, 39.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		asientoMesa.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(16.0f, -1.5f, 16.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		muebleCom.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(47.0f, -1.5f, 34.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		estufa.Draw(staticShader);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(47.0f, 11.5f, 34.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		alacena.Draw(staticShader);
 
 
 
