@@ -200,12 +200,12 @@ int main()
 
 	//////////
 	//YO
-
-
-
-
-
-
+	Model cama2("resources/objects/cama/cama.obj");
+	Model estante2("resources/objects/estante/estante.obj");
+	Model despertador2("resources/objects/despertador/despertador.obj");
+	Model buro2("resources/objects/buro/buro.obj");
+	Model lavabo1("resources/objects/lavabo/lavabo.obj");
+	Model toalla1("resources/objects/toalla/toalla.obj");
 
 
 
@@ -510,36 +510,36 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		estante.Draw(staticShader);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-23.0f, -1.5f, 26.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		estante2.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 30.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cama2.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 7.4f, 36.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		despertador2.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 5.4f, 53.5f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		toalla1.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 4.5f, 47.5f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		lavabo1.Draw(staticShader);
 
 
 
