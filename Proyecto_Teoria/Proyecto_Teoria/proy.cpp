@@ -69,10 +69,10 @@ float	movNave_x = 0.0f,
 		orientaNave = 0.0f;
 bool	animacionNave = false,
 		recorridoNave1 = true,
-		recorridoNave2 = false;
-
-
-
+		recorridoNave2 = false,
+		recorridoNave3 = false,
+		recorridoNave4 = false,
+		recorridoNave5 = false;
 //despertador
 float movD_y = 0.0f;
 bool aniD = false;
@@ -106,43 +106,43 @@ void animate(void)
 		}
 		if (recorridoNave2)
 		{
-			movNave_y += 1;
+			movNave_y += 0.5;
 			orientaNave = 0.0f;
 			if (movNave_y > 50)
 			{
-				recorridoNave1 = false;
 				recorridoNave2 = false;
+				recorridoNave3 = true;
 			}
 		}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		if (recorridoNave3)
+		{
+			movNave_x += 1.5;
+			orientaNave = 90.0f;
+			if (movNave_x > 70)
+			{
+				recorridoNave3 = false;
+				recorridoNave4 = true;
+			}
+		}
+		if (recorridoNave4)
+		{
+			movNave_z -= 2;
+			orientaNave = 180.0f;
+			if (movNave_z <= -100)
+			{
+				recorridoNave4 = false;
+				recorridoNave5 = true;
+			}
+		}
+		if (recorridoNave5)
+		{
+			movNave_y -= 0.3;
+			orientaNave = 180.0f;
+			if (movNave_y < 5)
+			{
+				recorridoNave5 = false;
+			}
+		}
 
 
 
