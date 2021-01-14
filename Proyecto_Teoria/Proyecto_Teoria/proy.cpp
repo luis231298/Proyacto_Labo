@@ -54,8 +54,36 @@ lastFrame = 0.0f;
 // Light
 //glm::vec3 lightDirection = glm::vec3(-0.2f, -1.0f, -0.3f);
 //Lighting
-glm::vec3 lightPosition(0.0f, 4.0f, -10.0f);
+glm::vec3 lightPosition(0.0f, 4.0f, -10.0f); //04-10
 glm::vec3 lightDirection(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition2(-10.0f, -1.5f, 30.0f); //04-10
+glm::vec3 lightDirection2(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition3(35.45f, -1.5f, 53.0f); //04-10
+glm::vec3 lightDirection3(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition4(-42.3f, -1.5f, 10.0f); //04-10
+glm::vec3 lightDirection4(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition5(20.3f, -1.5f, 6.2f); //04-10
+glm::vec3 lightDirection5(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition6(8.7f, 90.2f, 33.0f); //04-10
+glm::vec3 lightDirection6(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition7(57.7f, 17.2f, 59.0f); //04-10
+glm::vec3 lightDirection7(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition8(25.7f, 10.0f, 68.0f); //04-10
+glm::vec3 lightDirection8(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition9(39.19f, 28.47f, 33.6f); //04-10
+glm::vec3 lightDirection9(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
+glm::vec3 lightPosition10(65.0f, 10.0f, 56.0f); //04-10
+glm::vec3 lightDirection10(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
+
 
 // posiciones
 float x = 0.0f;
@@ -380,20 +408,92 @@ int main()
 		staticShader.setVec3("dirLight.specular", glm::vec3(0.0f, 0.0f, 0.0f));
 
 		staticShader.setVec3("pointLight[0].position", lightPosition);
-		staticShader.setVec3("pointLight[0].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[0].ambient", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setVec3("pointLight[0].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
 		staticShader.setVec3("pointLight[0].specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setFloat("pointLight[0].constant", 0.8f);//intensidad de la luz
-		staticShader.setFloat("pointLight[0].linear", 0.009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[0].linear", 0.0009f);//cuanto viaja la luz
 		staticShader.setFloat("pointLight[0].quadratic", 0.032f);//cuanto viaja la luz
 
 		staticShader.setVec3("pointLight[1].position", glm::vec3(0.0, 0.0f, 0.0f));
-		staticShader.setVec3("pointLight[1].ambient", glm::vec3(0.0f, 0.0f, 0.0f));
-		staticShader.setVec3("pointLight[1].diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setVec3("pointLight[1].ambient", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[1].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
 		staticShader.setVec3("pointLight[1].specular", glm::vec3(0.0f, 0.0f, 0.0f));
 		staticShader.setFloat("pointLight[1].constant", 1.0f);
 		staticShader.setFloat("pointLight[1].linear", 0.009f);
 		staticShader.setFloat("pointLight[1].quadratic", 0.032f);
+
+		staticShader.setVec3("pointLight[2].position", lightPosition2);
+		staticShader.setVec3("pointLight[2].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[2].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[2].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[2].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[2].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[2].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[3].position", lightPosition3);
+		staticShader.setVec3("pointLight[3].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[3].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[3].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[3].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[3].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[3].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[4].position", lightPosition4);
+		staticShader.setVec3("pointLight[4].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[4].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[4].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[4].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[4].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[4].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[5].position", lightPosition5);
+		staticShader.setVec3("pointLight[5].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[5].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[5].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[5].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[5].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[5].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[6].position", lightPosition6);
+		staticShader.setVec3("pointLight[6].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[6].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[6].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[6].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[6].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[6].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[7].position", lightPosition7);
+		staticShader.setVec3("pointLight[7].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[7].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[7].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[7].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[7].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[7].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[8].position", lightPosition8);
+		staticShader.setVec3("pointLight[8].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[8].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[8].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[8].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[8].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[8].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[9].position", lightPosition9);
+		staticShader.setVec3("pointLight[9].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[9].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[9].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[9].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[9].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[9].quadratic", 0.032f);//cuanto viaja la luz
+
+		staticShader.setVec3("pointLight[10].position", lightPosition10);
+		staticShader.setVec3("pointLight[10].ambient", glm::vec3(0.3f, 0.3f, 0.3f));
+		staticShader.setVec3("pointLight[10].diffuse", glm::vec3(1.0f, 1.0f, 1.0f));
+		staticShader.setVec3("pointLight[10].specular", glm::vec3(0.0f, 0.0f, 0.0f));
+		staticShader.setFloat("pointLight[10].constant", 0.8f);//intensidad de la luz
+		staticShader.setFloat("pointLight[10].linear", 0.0009f);//cuanto viaja la luz
+		staticShader.setFloat("pointLight[10].quadratic", 0.032f);//cuanto viaja la luz
 
 		staticShader.setFloat("material_shininess", 32.0f);
 
