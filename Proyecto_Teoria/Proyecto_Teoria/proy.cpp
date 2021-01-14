@@ -184,8 +184,7 @@ int main()
 	Model regaderaP2("resources/objects/regadera/regaderaP2.obj");
 	Model banio("resources/objects/banio/ban.obj");
 	Model tapabanio("resources/objects/banio/banTapa.obj");
-
-
+	Model alberca("resources/objects/alberca/alberca.obj");
 
 
 
@@ -351,18 +350,18 @@ int main()
 		staticShader.setMat4("model", model);
 		banio.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
+		/*model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-35, -1.5f, 42.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(1.0f, 0.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
-		tapabanio.Draw(staticShader);
+		tapabanio.Draw(staticShader);*/
 
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(45, -1.5f, -50.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		alberca.Draw(staticShader);
 
 
 
@@ -599,13 +598,13 @@ int main()
 		staticShader.setMat4("model", model);
 		p2.Draw(staticShader);
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 16.0f));
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 15.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		p3.Draw(staticShader);
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 56.0f));
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 58.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
