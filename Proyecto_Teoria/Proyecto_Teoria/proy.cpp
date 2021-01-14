@@ -66,6 +66,9 @@ bool animacion = false;
 
 void animate(void)
 {
+	std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
+	std::cout << "posicion camara= " << camera.Position.y << " en Y" << std::endl;
+	std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;
 	if (animacion)
 	{
 		movAuto_z += 0.03f;
