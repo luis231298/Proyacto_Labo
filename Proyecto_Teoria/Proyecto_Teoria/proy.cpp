@@ -791,7 +791,7 @@ void my_input(GLFWwindow *window)
 
 	//animacion de la Nave
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		animacionNave ^= true;	
+
 	
 	
 	
