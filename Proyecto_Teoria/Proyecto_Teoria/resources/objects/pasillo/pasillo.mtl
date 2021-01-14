@@ -1,5 +1,5 @@
 # 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
-# File Created: 12.01.2021 18:17:03
+# File Created: 13.01.2021 22:37:25
 
 newmtl wire_225088199
 	Ns 32
@@ -10,8 +10,8 @@ newmtl wire_225088199
 	Ka 0.8824 0.3451 0.7804
 	Kd 0.8824 0.3451 0.7804
 	Ks 0.3500 0.3500 0.3500
-	map_Ka suelocomedor.jpg
-	map_Kd suelocomedor.jpg
+	map_Ka pisoPasillo.jpg
+	map_Kd pisoPasillo.jpg
 
 newmtl wire_228214153
 	Ns 32
