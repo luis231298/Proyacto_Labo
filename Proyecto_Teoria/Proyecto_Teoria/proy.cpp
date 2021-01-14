@@ -301,7 +301,6 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cama1.Draw(staticShader);
-		/*Espacio Irma*/
 		/*Objetos del cuarto de lavado*/
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(38, -1.5f, -10.0f));
@@ -320,8 +319,6 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		burro.Draw(staticShader);
-
-		/*Aqui termina espacio Irma*/
 
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
