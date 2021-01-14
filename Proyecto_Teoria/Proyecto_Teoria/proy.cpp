@@ -266,8 +266,8 @@ int main()
 	Model banio2("resources/objects/banio/ban.obj");
 	Model puertaPrinc1("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
 	Model puertaPrinc2("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
-
-
+	Model puertaPrinc3("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
+	Model puertaPrinc4("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
 
 
 
@@ -460,19 +460,19 @@ int main()
 		staticShader.setMat4("model", model);
 		puertaPrinc2.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-13.4, -1.5f, 2.9f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		puertaPrinc3.Draw(staticShader);
 
-
-
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-5.8, -1.5f, 2.9f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		puertaPrinc4.Draw(staticShader);
 
 
 
