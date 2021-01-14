@@ -660,7 +660,7 @@ int main()
 		staticShader.setMat4("model", model);
 		paredes.Draw(staticShader);
 		
-
+		
 
 
 
