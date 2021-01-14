@@ -330,20 +330,7 @@ int main()
 		// -----
 		my_input(window);
 		animate();
-		//luz
-		lightPosition.x = camera.Position.x;
-		lightPosition.y = camera.Position.y;
-		lightPosition.z = camera.Position.z;
-		std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
-		std::cout << "posicion light= " << lightPosition.x << " en X" << std::endl;
 
-
-
-
-
-
-
-		//
 		// render
 		// ------
 		glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
@@ -823,9 +810,6 @@ void my_input(GLFWwindow *window)
 	//animacion de la Nave
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
 		animacionNave ^= true;
-	/*if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
-		animacionNave ^= true;	*/
-
 	
 	
 	
