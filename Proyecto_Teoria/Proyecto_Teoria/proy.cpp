@@ -156,6 +156,9 @@ int main()
 	Model buro("resources/objects/buro/buro.obj");
 	Model despertador("resources/objects/despertador/despertador.obj");
 	Model estante("resources/objects/estante/estante.obj");
+	Model lavadora1("resources/objects/lavadora/lavadora.obj");
+	Model lavadora2("resources/objects/lavadora/lavadora.obj");
+	Model burro("resources/objects/burro/burro.obj");
 
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -249,7 +252,31 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
-		//-------------------------------------------------------------
+
+		//-----------Espacio Irma--------------------------------
+		//Objetos del cuarto de lavado 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(38, -1.5f, -10.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		lavadora1.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(45, -1.5f, -10.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		lavadora2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(41, -1.5f, 8.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		burro.Draw(staticShader);
+
+		//-------Aqui termina espacio Irma------------------------
+
+
+		//------Espacio Balam-----------------------------------------------
 		//Cuartos Yak
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
@@ -263,8 +290,10 @@ int main()
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
 
-		//-------------------------------------------------------------
+		//------Aqui termina espacio Balam-------------------------------------------------------
 
+
+		//------Espacio Luis-----------------------------------------------
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-39.0f, -1.5f, 63.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
