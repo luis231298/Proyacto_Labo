@@ -74,10 +74,10 @@ bool	animacionNave = false,
 
 
 //despertador
-float movD_y = 3.5f;
-
+float movD_y = 0.0f;
 bool aniD = false;
-bool sube = true;
+bool recorridoD1 = true;
+bool recorridoD2 = false;
 
 void animate(void)
 {
@@ -117,22 +117,22 @@ void animate(void)
 	}
 	//despertador
 	if (aniD) {
-		if (sube) {
-			movD_y += 0.02f;
-			if (movD_y <= 20.0f) {
-				sube = false;
+		if (recorridoD1) {
+			movD_y += 0.4f;
+			if (movD_y >= 5.0f) {
+				recorridoD1 = false;
+				recorridoD2 = true;
 			}
-			else {
-				movD_y -= 0.02f;
-				if (movD_y <= 1.5f)
-					sube = true;
+		}
+		if (recorridoD2){
+			movD_y -= 0.1f;
+			if (movD_y <= 0.4){
+				recorridoD2 = false;
+				recorridoD1 = true;
+				aniD = false;
 			}
 		}
 	}
-
-
-
-
 
 
 
@@ -682,7 +682,7 @@ int main()
 		staticShader.setMat4("model", model);
 		buro.Draw(staticShader);
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-53.5870f, movD_y, 74.0f));
+		model = glm::translate(model, glm::vec3(-52.5f, 6.4f + movD_y, 74.5f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
@@ -839,7 +839,7 @@ void my_input(GLFWwindow *window)
 		camera.Position.z = 116.869f;
 	}
 	if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS)
-		aniD = true;
+		aniD ^= true;
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
