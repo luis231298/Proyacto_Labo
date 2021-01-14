@@ -186,8 +186,8 @@ int main()
 	Model tapabanio("resources/objects/banio/banTapa.obj");
 	Model alberca("resources/objects/alberca/alberca.obj");
 	Model banio2("resources/objects/banio/ban.obj");
-
-
+	Model puertaPrinc1("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
+	Model puertaPrinc2("resources/objects/PuertaPrincipal/puertaPrincipal.obj");
 
 
 
@@ -369,16 +369,16 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		banio2.Draw(staticShader);
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-15, -1.5f, 64.5f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		puertaPrinc1.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-7.5, -1.5f, 64.5f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		puertaPrinc2.Draw(staticShader);
 		//-------Aqui termina espacio Irma------------------------
 
 
