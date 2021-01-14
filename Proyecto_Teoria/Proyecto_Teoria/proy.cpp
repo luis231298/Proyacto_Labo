@@ -62,14 +62,14 @@ float x = 0.0f;
 float y = 0.0f;
 bool animacion = false;
 
-
-
-
-
-
-
-
-
+//variables para animacion de Nave
+float	movNave_x = 0.0f,
+		movNave_y = 0.0f,
+		movNave_z = 0.0f,
+		orientaNave = 0.0f;
+bool	animacionNave = false,
+		recorridoNave1 = true,
+		recorridoNave2 = false;
 
 
 
@@ -88,19 +88,20 @@ void animate(void)
 		std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+	//Animacion de la Nave
+	if (animacionNave)
+	{
+		if (recorridoNave1)
+		{
+			movNave_z += 2;
+			orientaNave = 0.0f;
+			if (movNave_z > 100)
+			{
+				recorridoNave1 = false;
+				recorridoNave2 = false;
+			}
+		}
+	}
 
 
 
@@ -512,7 +513,8 @@ int main()
 		cuartosYak.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(65.0f, 5.0f, 56.0f));
+		model = glm::translate(model, glm::vec3(65.0f+movNave_x, 5.0f+movNave_y, 56.0f+movNave_z));
+		model = glm::rotate(model, glm::radians(orientaNave), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
@@ -608,8 +610,7 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		paredes.Draw(staticShader);
-
-
+		
 
 
 
@@ -788,18 +789,18 @@ void my_input(GLFWwindow *window)
 	else
 		camera.MovementSpeed = MovementSpeed;
 
-	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-		lightPosition.x -= 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
-		lightPosition.x += 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
-		lightPosition.y += 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		lightPosition.y -= 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
-		lightPosition.z += 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-		lightPosition.z -= 1.0f;
+	//animacion de la Nave
+	if (key == GLFW_KEY_SPACE && action == GLFW_PRESS)
+		animacionNave ^= true;	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//pos camara
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {//frente
 		camera.Position.x = -18.7272f;
