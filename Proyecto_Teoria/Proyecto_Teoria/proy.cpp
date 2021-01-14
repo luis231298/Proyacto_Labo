@@ -517,13 +517,13 @@ int main()
 		staticShader.setMat4("projection", projection);
 		staticShader.setMat4("view", view);
 
-		/*staticShader.setVec3("material.specular", glm::vec3(0.5f));
+		staticShader.setVec3("material.specular", glm::vec3(0.5f));
 		staticShader.setFloat("material.shininess", 32.0f);
 		staticShader.setVec3("light.ambient", ambientColor);
 		staticShader.setVec3("light.diffuse", diffuseColor);
 		staticShader.setVec3("light.specular", 1.0f, 1.0f, 1.0f);
 		staticShader.setVec3("light.direction", lightDirection);
-		staticShader.setVec3("viewPos", camera.Position);*/
+		staticShader.setVec3("viewPos", camera.Position);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.5f, 0.0f));
@@ -564,12 +564,6 @@ int main()
 		staticShader.setMat4("model", model);
 		regaderaP1.Draw(staticShader);
 
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-55, -1.0f, 45.0f));
-		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		regaderaP2.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-35, -1.5f, 42.0f));
@@ -885,6 +879,17 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		planta.Draw(staticShader);
+
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-55, -1.0f, 45.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		regaderaP2.Draw(staticShader);
+		glEnable(GL_BLEND);
+
 		////////////
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
