@@ -333,7 +333,7 @@ int main()
 	Model p2("resources/objects/puerta/puerta.obj");
 	Model p3("resources/objects/puerta/puerta.obj");
 	Model p4("resources/objects/puerta/puerta.obj");
-
+	Model planta("resources/objects/planta/planta.obj");
 
 
 
