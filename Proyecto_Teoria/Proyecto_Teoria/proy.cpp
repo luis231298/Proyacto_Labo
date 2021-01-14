@@ -151,6 +151,7 @@ int main()
 	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
+	Model nave("resources/objects/Nave/Nave.obj");
 	
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -244,12 +245,22 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
+		//-------------------------------------------------------------
 
+		//Cuartos Yak
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartosYak.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		nave.Draw(staticShader);
+
+		//-------------------------------------------------------------
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-39.0f, -1.5f, 63.0f));
