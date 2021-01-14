@@ -287,7 +287,7 @@ int main()
 		asador.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-43.5870f, -1.5f, 64.58f));
+		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.58f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
