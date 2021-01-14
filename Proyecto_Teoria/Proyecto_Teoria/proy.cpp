@@ -276,7 +276,7 @@ int main()
 		cuartoIrma.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(20.3f, -1.5f, 9.0f));
+		model = glm::translate(model, glm::vec3(20.3f, -1.5f, 6.2f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartoLavado.Draw(staticShader);
