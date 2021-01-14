@@ -160,17 +160,17 @@ int main()
 	Model lavadora2("resources/objects/lavadora/lavadora.obj");
 	Model burro("resources/objects/burro/burro.obj");
 	//yak
-
-
-
-
-
-
-
-
-
-
-
+	Model alacena("resources/objects/Alacena/Alacena.obj");
+	Model asientoMesa("resources/objects/AsientoMesa/Asiento.obj");
+	Model bocina("resources/objects/Bocina/Bocina.obj");
+	Model cortinas("resources/objects/Cortinas/Cortinas.obj");
+	Model estufa("resources/objects/Estufa/Estufa.obj");
+	Model maquinita("resources/objects/Maquinita/Maquinita.obj");
+	Model mesa("resources/objects/Mesa/Mesa.obj");
+	Model muebleCom("resources/objects/MuebleComedor/Mueble.obj");
+	Model sillonG("resources/objects/SillonG/SillonGrande.obj");
+	Model sillonP("resources/objects/SillonP/SillonPequeño.obj");
+	Model tele("resources/objects/TV/Tele.obj");
 
 
 
@@ -400,50 +400,50 @@ int main()
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(37.0f, -1.5f, 58.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		sillonG.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(25.0f, -1.5f, 68.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		sillonP.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(37.0f, 5.0f, 76.5f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		tele.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(30.0f, -1.5f, 77.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		bocina.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(44.0f, -1.5f, 77.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		bocina.Draw(staticShader);
 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(4.5f, -1.5f, 65.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		maquinita.Draw(staticShader);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(16.0f, 4.5f, 77.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cortinas.Draw(staticShader);
 
 
 
