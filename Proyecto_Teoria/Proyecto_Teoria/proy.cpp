@@ -39,7 +39,7 @@ const unsigned int SCR_WIDTH = 800;
 const unsigned int SCR_HEIGHT = 600;
 
 // camera
-Camera camera(glm::vec3(0.0f, 0.0f, 3.0f));
+Camera camera(glm::vec3(0.0f, 35.0f, 10.0f));
 float MovementSpeed = 1.0f;
 float lastX = SCR_WIDTH / 2.0f;
 float lastY = SCR_HEIGHT / 2.0f;
@@ -62,19 +62,22 @@ float x = 0.0f;
 float y = 0.0f;
 bool animacion = false;
 
+//variables para animacion de Nave
+float	movNave_x = 0.0f,
+		movNave_y = 0.0f,
+		movNave_z = 0.0f,
+		orientaNave = 0.0f;
+bool	animacionNave = false,
+		recorridoNave1 = true,
+		recorridoNave2 = false;
 
 
 
+//despertador
+float movD_y = 3.5f;
 
-
-
-
-
-
-
-
-
-
+bool aniD = false;
+bool sube = true;
 
 void animate(void)
 {
@@ -88,30 +91,44 @@ void animate(void)
 		std::cout << "posicion camara= " << camera.Position.z << " en Z" << std::endl;
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	//Animacion de la Nave
+	if (animacionNave)
+	{
+		if (recorridoNave1)
+		{
+			movNave_z += 2;
+			orientaNave = 0.0f;
+			if (movNave_z > 100)
+			{
+				recorridoNave1 = false;
+				recorridoNave2 = true;
+			}
+		}
+		if (recorridoNave2)
+		{
+			movNave_y += 1;
+			orientaNave = 0.0f;
+			if (movNave_y > 50)
+			{
+				recorridoNave1 = false;
+				recorridoNave2 = false;
+			}
+		}
+	}
+	//despertador
+	if (aniD) {
+		if (sube) {
+			movD_y += 0.02f;
+			if (movD_y <= 20.0f) {
+				sube = false;
+			}
+			else {
+				movD_y -= 0.02f;
+				if (movD_y <= 1.5f)
+					sube = true;
+			}
+		}
+	}
 
 
 
@@ -512,7 +529,8 @@ int main()
 		cuartosYak.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(65.0f, 5.0f, 56.0f));
+		model = glm::translate(model, glm::vec3(65.0f+movNave_x, 5.0f+movNave_y, 56.0f+movNave_z));
+		model = glm::rotate(model, glm::radians(orientaNave), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
@@ -608,8 +626,7 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		paredes.Draw(staticShader);
-
-
+		
 
 
 
@@ -665,7 +682,7 @@ int main()
 		staticShader.setMat4("model", model);
 		buro.Draw(staticShader);
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-53.5870f, 7.4f, 74.0f));
+		model = glm::translate(model, glm::vec3(-53.5870f, movD_y, 74.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
@@ -788,18 +805,18 @@ void my_input(GLFWwindow *window)
 	else
 		camera.MovementSpeed = MovementSpeed;
 
-	if (glfwGetKey(window, GLFW_KEY_J) == GLFW_PRESS)
-		lightPosition.x -= 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS)
-		lightPosition.x += 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS)
-		lightPosition.y += 1.0f;
+	//animacion de la Nave
 	if (glfwGetKey(window, GLFW_KEY_N) == GLFW_PRESS)
-		lightPosition.y -= 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS)
-		lightPosition.z += 1.0f;
-	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
-		lightPosition.z -= 1.0f;
+		animacionNave ^= true;
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//pos camara
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {//frente
 		camera.Position.x = -18.7272f;
@@ -821,6 +838,8 @@ void my_input(GLFWwindow *window)
 		camera.Position.y = 73.326f;
 		camera.Position.z = 116.869f;
 	}
+	if (glfwGetKey(window, GLFW_KEY_9) == GLFW_PRESS)
+		aniD = true;
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
