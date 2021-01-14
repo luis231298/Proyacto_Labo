@@ -23,8 +23,8 @@ newmtl wire_225143087
 	Ka 0.8824 0.5608 0.3412
 	Kd 0.8824 0.5608 0.3412
 	Ks 0.3500 0.3500 0.3500
-	map_Ka tubo.jpg
-	map_Kd tubo.jpg
+	map_Ka v.png
+	map_Kd v.png
 
 newmtl wire_008110135
 	Ns 32
@@ -35,6 +35,6 @@ newmtl wire_008110135
 	Ka 0.0314 0.4314 0.5294
 	Kd 0.0314 0.4314 0.5294
 	Ks 0.3500 0.3500 0.3500
-	map_Ka v.png
-	map_Kd v.png
+	map_Ka tubo.jpg
+	map_Kd tubo.jpg
 
