@@ -246,7 +246,6 @@ int main()
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
 		//-------------------------------------------------------------
-
 		//Cuartos Yak
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
@@ -255,7 +254,7 @@ int main()
 		cuartosYak.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
+		model = glm::translate(model, glm::vec3(65.0f, 5.0f, 56.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
