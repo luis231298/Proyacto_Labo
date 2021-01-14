@@ -312,7 +312,20 @@ int main()
 		// -----
 		my_input(window);
 		animate();
+		//luz
 
+
+
+
+
+
+
+
+
+
+
+
+		//
 		// render
 		// ------
 		glClearColor(0.3f, 0.3f, 0.3f, 1.0f);
