@@ -151,14 +151,7 @@ int main()
 	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
-	//Model carro("resources/objects/lambo/carroceria.obj");
-	//Model buzon("resources/objects/Buzon/buzon.obj");
-	//Model pasto("resources/objects/pasto/pasto.obj");
-	//Model mesa("resources/objects/Mesa/mesa.obj");
-	//Model toscana("resources/objects/toscanapiso/ceramico.obj");
-	//Model cuarto("resources/objects/cuarto/cuarto.obj");
 	
-
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -281,12 +274,6 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		asador.Draw(staticShader);
-		//model = glm::rotate(glm::mat4(1.0f), glm::radians(0.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-		//model = glm::translate(model, glm::vec3(15.0f, 0.0f, movAuto_z));
-		//model = glm::scale(model, glm::vec3(0.01f, 0.01f, 0.01f));
-		////model = glm::scale(model, glm::vec3(0.3f, 0.3f, 0.3f));
-		//staticShader.setMat4("model", model);
-		//pasto.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
