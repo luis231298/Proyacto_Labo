@@ -149,6 +149,7 @@ int main()
 	Model cuartosYak("resources/objects/CuartosYak/CuartosYak.obj");
 	Model cuartosLuis("resources/objects/CuartoLuis/cuarto.obj");
 	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
+	Model cuartoLavado("resources/objects/CuartoLav/cuartoLavado.obj");
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
 	
@@ -240,7 +241,7 @@ int main()
 		pasto.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-10.0f, -1.5f, 25.0f));
+		model = glm::translate(model, glm::vec3(-10.0f, -1.5f, 30.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
@@ -262,6 +263,12 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cuartoIrma.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(20.3f, -1.5f, 9.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cuartoLavado.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-25.0f, -1.5f, -50.0f));
