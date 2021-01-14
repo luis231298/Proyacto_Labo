@@ -152,7 +152,7 @@ int main()
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
 	Model nave("resources/objects/Nave/Nave.obj");
-	
+	Model cama1("resources/objects/cama/cama.obj");
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -285,6 +285,13 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		asador.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-43.5870f, -1.5f, 64.58f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cama1.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
