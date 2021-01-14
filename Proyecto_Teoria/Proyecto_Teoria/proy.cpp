@@ -185,7 +185,7 @@ int main()
 	Model banio("resources/objects/banio/ban.obj");
 	Model tapabanio("resources/objects/banio/banTapa.obj");
 	Model alberca("resources/objects/alberca/alberca.obj");
-
+	Model banio2("resources/objects/banio/ban.obj");
 
 
 
@@ -363,12 +363,12 @@ int main()
 		staticShader.setMat4("model", model);
 		alberca.Draw(staticShader);
 
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(15, -1.5f, 0.0f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		banio2.Draw(staticShader);
 
 
 
@@ -525,7 +525,7 @@ int main()
 		mesita.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(40.0f, -0.5f, -50.0f));
+		model = glm::translate(model, glm::vec3(10.0f, -0.5f, -50.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		asador.Draw(staticShader);
