@@ -13,8 +13,6 @@
 #include<time.h>
 
 
-
-
 #define STB_IMAGE_IMPLEMENTATION
 #include <stb_image.h>	//Texture
 
@@ -51,7 +49,7 @@ bool firstMouse = true;
 const int FPS = 60;
 const int LOOP_TIME = 1000 / FPS; // = 16 milisec // 1000 millisec == 1 sec
 double	deltaTime = 0.0f,
-		lastFrame = 0.0f;
+lastFrame = 0.0f;
 
 // Light
 //glm::vec3 lightDirection = glm::vec3(-0.2f, -1.0f, -0.3f);
@@ -62,7 +60,6 @@ glm::vec3 lightDirection(-1.0f, -1.0f, -1.0f);//modi 0,-1,0
 // posiciones
 float x = 0.0f;
 float y = 0.0f;
-float movAuto_z = 0.0f;
 bool animacion = false;
 
 
@@ -156,9 +153,13 @@ int main()
 	Model asador("resources/objects/asador/asador.obj");
 	Model nave("resources/objects/Nave/Nave.obj");
 	Model cama1("resources/objects/cama/cama.obj");
+	Model buro("resources/objects/buro/buro.obj");
+	Model despertador("resources/objects/despertador/despertador.obj");
+	Model estante("resources/objects/estante/estante.obj");
 	Model lavadora1("resources/objects/lavadora/lavadora.obj");
 	Model lavadora2("resources/objects/lavadora/lavadora.obj");
 	Model burro("resources/objects/burro/burro.obj");
+
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -167,7 +168,7 @@ int main()
 	while (!glfwWindowShouldClose(window))
 	{
 		skyboxShader.setInt("skybox", 0);
-		
+
 		// per-frame time logic
 		// --------------------
 		lastFrame = SDL_GetTicks();
@@ -225,7 +226,7 @@ int main()
 		glm::vec3 lightColor = glm::vec3(1.0f);
 		glm::vec3 diffuseColor = lightColor * glm::vec3(0.5f);
 		glm::vec3 ambientColor = diffuseColor * glm::vec3(0.75f);
-		
+
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
@@ -251,7 +252,31 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
-		//-------------------------------------------------------------
+
+		//-----------Espacio Irma--------------------------------
+		//Objetos del cuarto de lavado 
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(38, -1.5f, -10.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		lavadora1.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(45, -1.5f, -10.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		lavadora2.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(41, -1.5f, 8.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		burro.Draw(staticShader);
+
+		//-------Aqui termina espacio Irma------------------------
+
+
+		//------Espacio Balam-----------------------------------------------
 		//Cuartos Yak
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(35.45f, -1.5f, 53.0f));
@@ -265,8 +290,10 @@ int main()
 		staticShader.setMat4("model", model);
 		nave.Draw(staticShader);
 
-		//-------------------------------------------------------------
+		//------Aqui termina espacio Balam-------------------------------------------------------
 
+
+		//------Espacio Luis-----------------------------------------------
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-39.0f, -1.5f, 63.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
@@ -298,33 +325,32 @@ int main()
 		asador.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.58f));
+		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.0f));
 		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		cama1.Draw(staticShader);
-		/*Espacio Irma*/
-		/*Objetos del cuarto de lavado*/
-		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(38, -1.5f, -10.0f));
-		model = glm::scale(model, glm::vec3(0.2f));
-		staticShader.setMat4("model", model);
-		lavadora1.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(45, -1.5f, -10.0f));
+		model = glm::translate(model, glm::vec3(-53.5870f, -1.5f, 68.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
-		lavadora2.Draw(staticShader);
+		buro.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(41, -1.5f, 8.0f));
+		model = glm::translate(model, glm::vec3(-53.5870f, 7.4f, 74.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
-		burro.Draw(staticShader);
+		despertador.Draw(staticShader);
 
-		/*Aqui termina espacio Irma*/
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-23.0f, -1.5f, 72.0f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		estante.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
