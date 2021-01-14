@@ -356,6 +356,27 @@ void my_input(GLFWwindow *window)
 		lightPosition.z += 1.0f;
 	if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS)
 		lightPosition.z -= 1.0f;
+	//pos camara
+	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {//frente
+		camera.Position.x = -18.7272f;
+		camera.Position.y = 11.7076f;
+		camera.Position.z = 156.769f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {//cuarto
+		camera.Position.x = 30.0306f;
+		camera.Position.y = 13.3445f;
+		camera.Position.z = 65.7507f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {//alberca
+		camera.Position.x = 10.6137f;
+		camera.Position.y = 34.9446f;
+		camera.Position.z = -104.339f;
+	}
+	if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) {//isometrico
+		camera.Position.x = 126.49f;
+		camera.Position.y = 73.326f;
+		camera.Position.z = 116.869f;
+	}
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
