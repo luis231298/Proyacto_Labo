@@ -203,10 +203,10 @@ int main()
 	Model buro2("resources/objects/buro/buro.obj");
 	Model lavabo1("resources/objects/lavabo/lavabo.obj");
 	Model toalla1("resources/objects/toalla/toalla.obj");
-
-
-
-
+	Model p1("resources/objects/puerta/puerta.obj");
+	Model p2("resources/objects/puerta/puerta.obj");
+	Model p3("resources/objects/puerta/puerta.obj");
+	Model p4("resources/objects/puerta/puerta.obj");
 
 
 
@@ -493,14 +493,12 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		buro.Draw(staticShader);
-
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-53.5870f, 7.4f, 74.0f));
 		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		despertador.Draw(staticShader);
-
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-23.0f, -1.5f, 72.0f));
 		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
@@ -537,25 +535,30 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		lavabo1.Draw(staticShader);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 44.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		p1.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 35.5f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		p2.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 16.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		p3.Draw(staticShader);
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-21.0f, -1.0f, 56.0f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, -1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		p4.Draw(staticShader);
 		////////////
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
