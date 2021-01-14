@@ -315,7 +315,7 @@ int main()
 		//luz
 		lightPosition.x = camera.Position.x;
 		lightPosition.y = camera.Position.y;
-		lightDirection.z = camera.Position.z;
+		lightPosition.z = camera.Position.z;
 		std::cout << "posicion camara= " << camera.Position.x << " en X" << std::endl;
 		std::cout << "posicion light= " << lightPosition.x << " en X" << std::endl;
 
