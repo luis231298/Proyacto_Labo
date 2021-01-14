@@ -149,10 +149,11 @@ int main()
 	Model cuartosYak("resources/objects/CuartosYak/CuartosYak.obj");
 	Model cuartosLuis("resources/objects/CuartoLuis/cuarto.obj");
 	Model cuartoIrma("resources/objects/Cuarto5Irma/cuartoIrma.obj");
+	Model cuartoLavado("resources/objects/CuartoLav/cuartoLavado.obj");
 	Model mesita("resources/objects/mesita/mesita.obj");
 	Model asador("resources/objects/asador/asador.obj");
 	Model nave("resources/objects/Nave/Nave.obj");
-	
+	Model cama1("resources/objects/cama/cama.obj");
 	// draw in wireframe
 	//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -241,7 +242,7 @@ int main()
 		pasto.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(-10.0f, -1.5f, 25.0f));
+		model = glm::translate(model, glm::vec3(-10.0f, -1.5f, 30.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		pasillo.Draw(staticShader);
@@ -274,6 +275,12 @@ int main()
 		cuartoIrma.Draw(staticShader);
 
 		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(20.3f, -1.5f, 9.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cuartoLavado.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-25.0f, -1.5f, -50.0f));
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
@@ -284,6 +291,13 @@ int main()
 		model = glm::scale(model, glm::vec3(0.2f));
 		staticShader.setMat4("model", model);
 		asador.Draw(staticShader);
+
+		model = glm::mat4(1.0f);
+		model = glm::translate(model, glm::vec3(-53.5870f, 1.5f, 66.58f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::scale(model, glm::vec3(0.2f));
+		staticShader.setMat4("model", model);
+		cama1.Draw(staticShader);
 		// -------------------------------------------------------------------------------------------------------------------------
 		// Termina Escenario
 		// -------------------------------------------------------------------------------------------------------------------------
