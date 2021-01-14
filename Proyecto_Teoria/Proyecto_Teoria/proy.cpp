@@ -98,20 +98,20 @@ void animate(void)
 			if (movNave_z > 100)
 			{
 				recorridoNave1 = false;
+				recorridoNave2 = true;
+			}
+		}
+		if (recorridoNave2)
+		{
+			movNave_y += 1;
+			orientaNave = 0.0f;
+			if (movNave_y > 50)
+			{
+				recorridoNave1 = false;
 				recorridoNave2 = false;
 			}
 		}
 	}
-
-
-
-
-
-
-
-
-
-
 
 
 
